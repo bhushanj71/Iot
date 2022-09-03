@@ -35,10 +35,10 @@ def iothub_client_telemetry_sample_run():
 
             # Add a custom application property to the message.
             # An IoT hub can filter on these properties without access to the message body.
-            #if pressure > 40:
-              #message.custom_properties["pressureAlert"] = "true"
-            #else:
-              #message.custom_properties["pressureAlert"] = "false"
+            if pressure > 40:
+              message.custom_properties["pressureAlert"] = "true"
+            else:
+              message.custom_properties["pressureAlert"] = "false"
 
             # Send the message.
             print( "Sending message: {}".format(message) )
